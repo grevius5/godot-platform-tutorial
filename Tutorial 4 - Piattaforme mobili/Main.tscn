@@ -1,0 +1,93 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Background/BGFront.png" type="Texture" id=1]
+[ext_resource path="res://Tileset.tres" type="TileSet" id=2]
+[ext_resource path="res://Background/CloudsBack.png" type="Texture" id=3]
+[ext_resource path="res://Background/CloudsFront.png" type="Texture" id=4]
+[ext_resource path="res://Background/BGBack.png" type="Texture" id=5]
+[ext_resource path="res://Player/elf_m_run_anim_f0.png" type="Texture" id=6]
+[ext_resource path="res://Player/Player.gd" type="Script" id=7]
+[ext_resource path="res://Player/elf_m_idle_anim_f0.png" type="Texture" id=8]
+[ext_resource path="res://Player/elf_m_idle_anim_f2.png" type="Texture" id=9]
+[ext_resource path="res://Player/elf_m_run_anim_f3.png" type="Texture" id=10]
+[ext_resource path="res://Player/elf_m_idle_anim_f3.png" type="Texture" id=11]
+[ext_resource path="res://Player/elf_m_run_anim_f1.png" type="Texture" id=12]
+[ext_resource path="res://Player/elf_m_idle_anim_f1.png" type="Texture" id=13]
+[ext_resource path="res://Player/elf_m_run_anim_f2.png" type="Texture" id=14]
+[ext_resource path="res://Platform/Platform.tscn" type="PackedScene" id=15]
+
+[sub_resource type="Curve2D" id=1]
+_data = {
+"points": PoolVector2Array( 0, 0, 0, 0, 8, 0, 0, 0, 0, 0, 8, -48, 0, 0, 0, 0, 120, -48, 0, 0, 0, 0, 120, 32, 0, 0, 0, 0, 8, 32, 0, 0, 0, 0, 8, 0 )
+}
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 8.0
+height = 6.0
+
+[sub_resource type="SpriteFrames" id=3]
+animations = [ {
+"frames": [ ExtResource( 8 ), ExtResource( 13 ), ExtResource( 9 ), ExtResource( 11 ) ],
+"loop": true,
+"name": "idle",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": false,
+"name": "jump",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 10 ) ],
+"loop": true,
+"name": "run",
+"speed": 12.0
+} ]
+
+[node name="Main" type="Node2D"]
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="CloudsBack" type="Sprite" parent="Background"]
+texture = ExtResource( 3 )
+centered = false
+
+[node name="CloudsFront" type="Sprite" parent="Background"]
+texture = ExtResource( 4 )
+centered = false
+
+[node name="BGBack" type="Sprite" parent="Background"]
+texture = ExtResource( 5 )
+centered = false
+
+[node name="BGFront" type="Sprite" parent="Background"]
+texture = ExtResource( 1 )
+centered = false
+
+[node name="TileMap" type="TileMap" parent="."]
+position = Vector2( 256, 160 )
+tile_set = ExtResource( 2 )
+cell_size = Vector2( 16, 16 )
+format = 1
+tile_data = PoolIntArray( 65518, 0, 8, 65519, 0, 10, 65520, 0, 11, 9, 0, 196609, 10, 0, 196611, 12, 0, 196609, 13, 0, 196611, 15, 0, 8, 16, 0, 10, 17, 0, 11, 131054, 0, 65544, 131055, 0, 131081, 131056, 0, 131083, 65551, 0, 65544, 65552, 0, 131081, 65553, 0, 131083, 196590, 0, 65544, 196591, 0, 131081, 196592, 0, 131083, 131087, 0, 65544, 131088, 0, 131081, 131089, 0, 131083, 262126, 0, 65544, 262127, 0, 131081, 262128, 0, 131083, 262140, 2, 0, 262141, 2, 65536, 196623, 0, 65544, 196624, 0, 131081, 196625, 0, 131083, 327662, 0, 65544, 327663, 0, 131081, 327664, 0, 131083, 327675, 0, 8, 327676, 0, 10, 327677, 0, 10, 327678, 0, 11, 262148, 2, 3, 262153, 2, 2, 262159, 0, 65544, 262160, 0, 131081, 262161, 0, 131083, 393198, 0, 65544, 393199, 0, 131081, 393200, 0, 131083, 393209, 0, 8, 393210, 0, 10, 393211, 0, 65541, 393212, 0, 131081, 393213, 0, 131081, 393214, 0, 131083, 327680, 2, 65537, 327683, 2, 65537, 327684, 2, 65539, 327686, 1, 0, 327689, 2, 65538, 327692, 1, 0, 327695, 0, 65544, 327696, 0, 131081, 327697, 0, 131083, 458734, 0, 65544, 458735, 0, 131081, 458736, 0, 131083, 458743, 0, 8, 458744, 0, 10, 458745, 0, 65541, 458746, 0, 131081, 458747, 0, 131081, 458748, 0, 131081, 458749, 0, 131081, 458750, 0, 65542, 458751, 0, 10, 393216, 0, 10, 393217, 0, 10, 393218, 0, 10, 393219, 0, 10, 393220, 0, 10, 393221, 0, 10, 393222, 0, 10, 393223, 0, 10, 393224, 0, 10, 393225, 0, 10, 393226, 0, 10, 393227, 0, 10, 393228, 0, 10, 393229, 0, 10, 393230, 0, 10, 393231, 0, 65541, 393232, 0, 131081, 393233, 0, 131083, 524270, 0, 65544, 524271, 0, 131081, 524272, 0, 131083, 524277, 0, 8, 524278, 0, 10, 524279, 0, 65541, 524280, 0, 131081, 524281, 0, 131081, 524282, 0, 131081, 524283, 0, 131081, 524284, 0, 131081, 524285, 0, 131081, 524286, 0, 131081, 524287, 0, 131081, 458752, 0, 131081, 458753, 0, 131081, 458754, 0, 131081, 458755, 0, 131081, 458756, 0, 131081, 458757, 0, 131081, 458758, 0, 131081, 458759, 0, 131081, 458760, 0, 131081, 458761, 0, 131081, 458762, 0, 131081, 458763, 0, 131081, 458764, 0, 131081, 458765, 0, 131081, 458766, 0, 131081, 458767, 0, 131081, 458768, 0, 131081, 458769, 0, 131083, 589806, 0, 65544, 589807, 0, 131081, 589808, 0, 65542, 589809, 0, 10, 589810, 0, 10, 589811, 0, 10, 589812, 0, 10, 589813, 0, 65541, 589814, 0, 131081, 589815, 0, 131081, 589816, 0, 131081, 589817, 0, 131081, 589818, 0, 131081, 589819, 0, 131081, 589820, 0, 131081, 589821, 0, 131081, 589822, 0, 131081, 589823, 0, 131081, 524288, 0, 131081, 524289, 0, 131081, 524290, 0, 131081, 524291, 0, 131081, 524292, 0, 131081, 524293, 0, 131081, 524294, 0, 131081, 524295, 0, 131081, 524296, 0, 131081, 524297, 0, 131081, 524298, 0, 131081, 524299, 0, 131081, 524300, 0, 131081, 524301, 0, 131081, 524302, 0, 131081, 524303, 0, 131081, 524304, 0, 131081, 524305, 0, 131083, 655342, 0, 65544, 655343, 0, 131081, 655344, 0, 131081, 655345, 0, 131081, 655346, 0, 131081, 655347, 0, 131081, 655348, 0, 131081, 655349, 0, 131081, 655350, 0, 131081, 655351, 0, 131081, 655352, 0, 131081, 655353, 0, 131081, 655354, 0, 131081, 655355, 0, 131081, 655356, 0, 131081, 655357, 0, 131081, 655358, 0, 131081, 655359, 0, 131081, 589824, 0, 131081, 589825, 0, 131081, 589826, 0, 131081, 589827, 0, 131081, 589828, 0, 131081, 589829, 0, 131081, 589830, 0, 131081, 589831, 0, 131081, 589832, 0, 131081, 589833, 0, 131081, 589834, 0, 131081, 589835, 0, 131081, 589836, 0, 131081, 589837, 0, 131081, 589838, 0, 131081, 589839, 0, 131081, 589840, 0, 131081, 589841, 0, 131083, 720878, 0, 196616, 720879, 0, 196617, 720880, 0, 196617, 720881, 0, 196617, 720882, 0, 196617, 720883, 0, 196617, 720884, 0, 196617, 720885, 0, 196617, 720886, 0, 196617, 720887, 0, 196617, 720888, 0, 196617, 720889, 0, 196617, 720890, 0, 196617, 720891, 0, 196617, 720892, 0, 196617, 720893, 0, 196617, 720894, 0, 196617, 720895, 0, 196617, 655360, 0, 196617, 655361, 0, 196617, 655362, 0, 196617, 655363, 0, 196617, 655364, 0, 196617, 655365, 0, 196617, 655366, 0, 196617, 655367, 0, 196617, 655368, 0, 196617, 655369, 0, 196617, 655370, 0, 196617, 655371, 0, 196617, 655372, 0, 196617, 655373, 0, 196617, 655374, 0, 196617, 655375, 0, 196617, 655376, 0, 196617, 655377, 0, 196619 )
+
+[node name="Platform" parent="." instance=ExtResource( 15 )]
+position = Vector2( 248, 192 )
+cell_movement = 6
+cell_per_seconds = 4.0
+path2D = NodePath("Path2D")
+
+[node name="Path2D" type="Path2D" parent="Platform"]
+curve = SubResource( 1 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( 32, 278 )
+script = ExtResource( 7 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource( 2 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
+frames = SubResource( 3 )
+animation = "idle"
+frame = 3
+playing = true

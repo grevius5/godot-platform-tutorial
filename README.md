@@ -8,3 +8,6 @@ In this repo you can find:
 
 Tutorials list
 - [Godot - Il nodo TileMap](https://www.youtube.com/watch?v=pLAkvlOdiXI)
+- [Godot - Aggiungiamo le collisioni e creiamo il player](https://youtu.be/zsosHV4s8kc)
+- [Godot - Animiamo il player](https://youtu.be/HtdfwUzHvHU)
+- [Godot - Piattaforme mobili](https://youtu.be/8QX0Z13NuUI)

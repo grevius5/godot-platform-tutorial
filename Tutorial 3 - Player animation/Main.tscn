@@ -26,14 +26,14 @@ animations = [ {
 "name": "idle",
 "speed": 12.0
 }, {
-"frames": [ ExtResource( 14 ) ],
-"loop": false,
-"name": "jump",
-"speed": 12.0
-}, {
 "frames": [ ExtResource( 6 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 10 ) ],
 "loop": true,
 "name": "run",
+"speed": 12.0
+}, {
+"frames": [ ExtResource( 14 ) ],
+"loop": false,
+"name": "jump",
 "speed": 12.0
 } ]
 
@@ -74,4 +74,5 @@ shape = SubResource( 1 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="Player"]
 frames = SubResource( 2 )
 animation = "idle"
+frame = 3
 playing = true
