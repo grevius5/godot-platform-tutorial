@@ -11,3 +11,5 @@ Tutorials list
 - [Godot - Aggiungiamo le collisioni e creiamo il player](https://youtu.be/zsosHV4s8kc)
 - [Godot - Animiamo il player](https://youtu.be/HtdfwUzHvHU)
 - [Godot - Piattaforme mobili](https://youtu.be/8QX0Z13NuUI)
+- [Godot - Movimento camera](https://youtu.be/X16POqc-x-M)
+- [Godot - Parallax Background](https://youtu.be/BAmRdIVuvwQ)
