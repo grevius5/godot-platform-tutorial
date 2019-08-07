@@ -13,3 +13,4 @@ Tutorials list
 - [Godot - Piattaforme mobili](https://youtu.be/8QX0Z13NuUI)
 - [Godot - Movimento camera](https://youtu.be/X16POqc-x-M)
 - [Godot - Parallax Background](https://youtu.be/BAmRdIVuvwQ)
+- [Godot - Enemy movement](https://youtu.be/OEdysH7aJ0I)
