@@ -14,3 +14,4 @@ Tutorials list
 - [Godot - Movimento camera](https://youtu.be/X16POqc-x-M)
 - [Godot - Parallax Background](https://youtu.be/BAmRdIVuvwQ)
 - [Godot - Enemy movement](https://youtu.be/OEdysH7aJ0I)
+- [Godot - Enemy damage](https://youtu.be/5fDEXvVYWuw)
